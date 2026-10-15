@@ -46,9 +46,14 @@ pipeline {
             }
         }
 
+
         stage('Deploy with Docker Compose') {
             steps {
                 sh '''
+                    whoami
+                    which docker
+                    docker --version
+                    docker compose version
                     docker compose down || true
                     docker compose pull
                     docker compose up -d --remove-orphans
@@ -56,5 +61,6 @@ pipeline {
                 '''
             }
         }
+
     }
 }
