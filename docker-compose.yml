@@ -1,9 +1,10 @@
 services:
   prediction-api:
-    image: ateebakmal/linear-regression-api:v1
+    image: ateebakmal/linear-regression-api-lab-6:v1
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
     restart: unless-stopped
+
